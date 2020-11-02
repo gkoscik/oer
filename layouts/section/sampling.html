@@ -1,0 +1,191 @@
+{{ define "main" }}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // function SamplingPractice() {
+        // }
+        var SamplingPractice = [{
+                "Question": "All students who graduated from the college last year",
+                "Answer": "Population"
+            },
+            {
+                "Question": "The average cumulative GPA of students in the survey who graduated from the college last year",
+                "Answer": "Statistic"
+            },
+            {
+                "Question": "The average cumulative GPA of students who graduated from the college last year",
+                "Answer": "Parameter"
+            },
+            {
+                "Question": "A group of students who graduated from the college last year, randomly selected",
+                "Answer": "Sample"
+            },
+            {
+                "Question": "3.65, 2.80, 1.50, 3.90",
+                "Answer": "Data"
+            },
+            {
+                "Question": "All students who attended the college last year",
+                "Answer": "None of the above. This study refers to students who graduated last year "
+            }
+        ]
+        // // var SamplingIndex = [];
+        // // while(SamplingIndex.length < 3){
+        // //     var r = Math.floor(Math.random() * SampleData.length);
+        // //     if(SamplingIndex.indexOf(r) === -1) SamplingIndex.push(r);
+        // // }
+        // // var SamplingIndex = [0,1,2];
+        // // var i;
+        // // var SamplingPracticeSubset = [];
+        // // for (i = 0; i < SamplingIndex.length; i++) {
+        // //   SamplingPracticeSubset.push(SamplingPractice[i]);
+        // // }
+        // var SamplingIndex = [0, 1, 2, 3, 4, 5];
+        // var i;
+        // var SamplingPracticeSubset = [];
+        // for (i = 0; i < SamplingIndex.length; i++) {
+        //   SamplingPracticeSubset.push(SamplingPractice[i]);
+        // }
+        var slides = SamplingPractice;
+        var content = '';
+        slides.forEach(function (slide) {
+            content +=
+                '<div class="flipCard"><div class="flipCardInner"><div class="flipCardFront"><i class="fas fa-copy"></i><p>' +
+                slide.Question + '</p></div><div class="flipCardBack"><p>' + slide.Answer +
+                '</div></div></div>';
+        });
+        document.getElementById("SamplingPractice").innerHTML = content;
+    }, false);
+</script>
+
+<section id="Sampling">
+
+    <div class="container">
+
+        <h2 class="mt0 mb0 bold main">
+            Sampling: Introduction
+        </h2>
+
+        <p class="def">
+            In statistics, we generally want to study a <span class="emph"> population</span>. You can think of a
+            population as a collection of persons, things, or
+            objects under study. To study the population, we select a <span class="emph">sample</span>. The idea of
+            sampling is to select a portion (or subset)
+            of the larger population and study that portion (the sample) to gain information about the population. <span
+                class="emph">Data</span> are the result of
+            sampling from a population.
+
+        </p>
+
+        <img src="{{ "media/Figure 1.1 and 1.2 - Visual representation of a population and a sample.PNG" | relURL }}"
+            alt="Population and Sample" class="figure">
+
+        <div class="example mt0 mb0 mtb1">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mb0 mt0">
+                    Example 1 - Election polls
+                </p>
+                <p class="example mt0 mb0">
+                    In presidential elections,
+                    opinion poll samples of 1,000 people are taken. The opinion poll is supposed to represent the
+                    views of the people
+                    in the entire country.
+                </p>
+            </div>
+        </div>
+        <p class="def">
+            From the sample data, we can calculate a <span class="emph">statistic</span>. A statistic is a number that
+            represents a property of the sample. The statistic is an estimate
+            of a <span class="emph">population parameter</span>. A parameter is a numerical characteristic of the whole
+            population that can be
+            estimated by a statistic.
+        </p>
+
+        <p class="def">
+            One of the main concerns in the field of statistics is how accurately a statistic estimates a parameter. The
+            accuracy really
+            depends on how well the sample represents the population. The sample must contain the characteristics of the
+            population
+            in order to be a representative sample. We are interested in both the sample statistic and the population
+            parameter in
+            inferential statistics.
+        </p>
+
+        <div class="example">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Example 2 - Parameters vs statistics
+                </p>
+                <p class="example mt0 mb0">
+                    In the example above, the percentage of 1,000 people selected for the survey who support a
+                    particular
+                    candidate would be a <span class="emph">statistic</span>. The (unknown) percentage of voters in the
+                    whole country who support that
+                    particular candidate would be a <span class="emph">parameter</span>.
+                </p>
+            </div>
+        </div>
+
+        <h4>
+            Online practice
+        </h4>
+
+        <div class="example mt0 mb0 mtb1">
+            <div class="bigEWrap">
+                <div class="bigE practiceCircle">
+                    <p>P</p>
+                </div>
+                <p class="smallE mt0 mb0">Practice</p>
+            </div>
+            <div class="exampleInner practice">
+                <p class="example mt0 mb0">
+                    A survey was conducted at a local college to analyze the average cumulative GPA’s of students who
+                    graduated last
+                    year. Plese identify the Population, Statistic, Parameter, Sample, and Data.
+                </p>
+                <p class="example mb0">
+                    Hover over each card to check your answer
+                </p>
+            </div>
+        </div>
+
+        <div id="SamplingPractice" class="threeCol"></div>
+
+        <a href="/sampling-methods" targe="_self" class="cta ctaNext">
+            <div class="nextWrap">
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Next</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Next topic: Sampling methods</h5>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
+
+        <a href="/" targe="_self" class="cta ctaPrevious">
+            <div class="nextWrap">
+                <i class="fas fa-chevron-left"></i>
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Previous</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Homepage</h5>
+                </div>
+
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+{{ end }}

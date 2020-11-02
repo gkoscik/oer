@@ -1,0 +1,478 @@
+{{ define "main" }}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var myChart = Highcharts.chart('figure17a', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Winter vacation budget'
+            },
+            xAxis: {
+                categories: ['Transportation', 'Lodging', 'Entertainment', 'Insurance', 'Other']
+            },
+            yAxis: {
+                labels: {
+                    formatter: function () {
+                        if (this.value >= 0) {
+                            return '$' + this.value
+                        } else {
+                            return '-$' + (-this.value)
+                        }
+                    }
+                },
+                title: {
+                    text: 'Cost'
+                }
+            },
+            series: [{
+                name: 'Expenses',
+                data: [1800, 1100, 500, 200, 500]
+            }]
+        });
+        var myChart2 = Highcharts.chart('figure17b', {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Winter vacation budget'
+            },
+            series: [{
+                name: 'Winter budget',
+                data: [{
+                    name: 'Transportation',
+                    color: '#0041A1',
+                    y: 1800
+                }, {
+                    name: 'Lodging',
+                    color: '#F1A208',
+                    y: 1100
+                }, {
+                    name: 'Entertainment',
+                    color: '#06A77D',
+                    y: 500
+                }, {
+                    name: 'Insurance',
+                    color: '#EE4266',
+                    y: 200
+                }, {
+                    name: 'Other',
+                    color: 'grey',
+                    y: 500
+                }]
+            }]
+        });
+
+        var myChart3 = Highcharts.chart('figure17c', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: "Bjorn's weight from January to April"
+            },
+            xAxis: {
+                categories: ['January', 'February', 'March', 'May']
+            },
+            yAxis: {
+                title: {
+                    text: 'Weight in pounds'
+                }
+            },
+            series: [{
+                name: 'Weight',
+                showInLegend: false,
+                data: [215, 210, 198, 198]
+            }]
+        });
+
+
+
+        var myChart4 = Highcharts.chart('figure17d', {
+
+            title: {
+                text: "Bjorn's weight from January to April"
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Weight in pounds'
+                }
+            },
+
+            xAxis: {
+                categories: ['January', 'February', 'March', 'May']
+            },
+
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                showLegend: false
+            },
+            series: [{
+                name: 'Weight',
+                data: [215, 210, 198, 198]
+            }],
+        });
+        var myChart5 = Highcharts.chart('figure17e', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Weight of Siberian Huskies - Frequency distribution'
+            },
+            xAxis: {
+                categories: ['0 to 9', '10 - 19', '20 - 29', '30 - 39', '40+']
+            },
+            yAxis: {
+                title: {
+                    text: 'Frequency (count)'
+                }
+            },
+            series: [{
+                name: 'Weight',
+                data: [20, 81, 272, 125, 2 ]
+            }]
+        });
+
+        var myChart6 = Highcharts.chart('figure17f', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Weight of Siberian Huskies - Relative Frequency distribution'
+            },
+            xAxis: {
+                categories: ['0 to 9', '10 - 19', '20 - 29', '30 - 39', '40+']
+            },
+            yAxis: {
+                title: {
+                    text: 'Relative frequency'
+                }
+            },
+            series: [{
+                name: 'Weight',
+                data: [0.040, 0.162, 0.544, 0.250, 0.004 ]
+            }]
+        });
+
+    });
+</script>
+
+<section id="Sampling">
+
+    <div class="container">
+
+        <h2 class="mt0 mb0 bold main">
+            Visual Displays of data
+        </h2>
+
+        <p class="def">
+            Tables are a good way of organizing and displaying data. But graphs can be even more helpful in
+            understanding the data. We will start with discussing visual displays of qualitative (categorical) data,
+            followed by visual display of quantitative data.
+        </p>
+
+        <h4 class="mb0 mt0">
+            Qualitative (categorical) data
+        </h4>
+
+        <p class="def mb0">
+            Two graphs that are used to display qualitative data are <span class="emph">pie charts</span>
+            and <span class="emph">bar graphs</span>. Both can be easily generated using Technology - either Excel or
+            Google Sheets.
+        </p>
+
+        <p class="def mb0">
+            It is a good idea to look at a variety of graphs to see which is the most helpful in displaying the data. We
+            might make
+            different choices of what we think is the “best” graph depending on the data and the context. Our choice
+            also depends on
+            what we are using the data for.
+        </p>
+
+        <a href="{{ "media/Visual Displays - categorical data.xlsx" | relURL }}" target="_blank" class="download">
+            <div class="downloadWrap mt1">
+                <i class="fas fa-download"></i>
+                <div class="downloadInner">
+                    <h4 class="downloadMain mb0 mt0 ">Download</h4>
+                    <p class="downloadSub mb0 mt0">This file shows how to use create Pie Charts and Bar Charts in Excel
+                    </p>
+                </div>
+            </div>
+        </a>
+
+
+        <h4 class="mb0">
+            Quantitative data
+        </h4>
+
+        <p class="def mb0">
+            When visualizing quantiative data, we need to pay attention to the context. Using Pie Charts to visualize
+            Quantitative data is only meaningul if the numbers represents parts of the whole. Or, in other words, if the
+            sum is a meaningful number. Let's illustrate it with two examples.
+        </p>
+
+        <ul>
+            <li>Winter vacation budget</li>
+            <li>Weigh loss over time</li>
+        </ul>
+
+        <div class="example mt1">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Winter vacation budget
+                </p>
+                <p class="example mt0 mb0">
+                    The Garcia family is planning a winter vacation. They'll going on a 5-day trip to Split Rock
+                    Lighthouse State
+                    Park, MN. They're estimating to spend $1,800 on transportation, $1,100 on lodging, $500 on
+                    entertainment, $200 on insurance, and $500 on other expenses. Create a meanigful visual display of
+                    this data.
+                </p>
+
+                <div class="gridTable gridTable2">
+                    <div class="gridTableCell gridTableHeader">Category</div>
+                    <div class="gridTableCell gridTableHeader">Cost</div>
+                    <div class="gridTableCell">Transportation</div>
+                    <div class="gridTableCell">$1,800</div>
+                    <div class="gridTableCell">Lodging</div>
+                    <div class="gridTableCell">$1,100</div>
+                    <div class="gridTableCell">Entertainment</div>
+                    <div class="gridTableCell">$500</div>
+                    <div class="gridTableCell">Insurance</div>
+                    <div class="gridTableCell">$200</div>
+                    <div class="gridTableCell">Other</div>
+                    <div class="gridTableCell">$500</div>
+                </div>
+                <!-- 
+                <img src="{{ "media/Figure 1.7 Quantitative data.PNG" | relURL }}" alt="Population and Sample"
+                    class="figure figureFullWidth mb0"> -->
+
+                <div class="twoChartsWrap mt1">
+                    <div id="figure17a" class="figureHighcharts figureOneRow"></div>
+                    <div id="figure17b" class="figureHighcharts figureOneRow"></div>
+                </div>
+
+                <div class="figureCation">
+                    <h5 class="mb0 mt1 captionMain">
+                        Figure 1.7
+                    </h5>
+                    <p class="mb0 mt0 captionSub">
+                        Visual representation of quantitative data using frequenc
+                    </p>
+                </div>
+
+                <p class="def mb0">
+                    In this context, using a Pie Chart is meaningul becasue the sum of expenses is a meaningul number.
+                    In other words, every category represents a part of the budget.
+                </p>
+            </div>
+        </div>
+
+        <div class="example mt1">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Monthly weight loss
+                </p>
+                <p class="example mt0 mb0">
+                    On Jan 1, Bjorn started a new diet. The following table shows his weigh from January to April.
+                    Create a meanigful visual display of this data.
+                </p>
+
+
+                <div class="gridTable gridTable2">
+                    <div class="gridTableCell gridTableHeader">Month</div>
+                    <div class="gridTableCell gridTableHeader">Weight in pounds</div>
+                    <div class="gridTableCell">January</div>
+                    <div class="gridTableCell">215</div>
+                    <div class="gridTableCell">February</div>
+                    <div class="gridTableCell">210</div>
+                    <div class="gridTableCell">March</div>
+                    <div class="gridTableCell">198</div>
+                    <div class="gridTableCell">April</div>
+                    <div class="gridTableCell">198</div>
+                </div>
+
+                <!-- <img src="{{ "media/Figure 1.8 Quantitative data.PNG" | relURL }}" alt="Population and Sample"
+                    class="figure figureFullWidth mb0"> -->
+
+                <div class="twoChartsWrap mt1">
+                    <div id="figure17c" class="figureHighcharts figureOneRow"></div>
+                    <div id="figure17d" class="figureHighcharts figureOneRow"></div>
+                </div>
+
+                <div class="figureCation mb1">
+                    <h5 class="mb0 mt1 captionMain">
+                        Figure 1.8
+                    </h5>
+                    <p class="mb0 mt0 captionSub">
+                        Visual representation of quantitative data
+                    </p>
+                </div>
+
+
+                <div class="warning mt1">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p class="mb0 mt0">
+                        In this example, using a Pie Chart is meaningless because monthly weights do not represent parts
+                        of the whole.
+                    </p>
+                </div>
+
+                <p class="def">
+                    Instead, when working this data over time, it is suggested to use <span class="emph">line
+                        charts</span> like the one on the
+                    right.
+                </p>
+
+                <div class="warning important">
+                    <i class="fas fa-star"></i>
+                    <p class="mb0 mt0">
+                        Note that both charts show the same data, but they look different because of vertical scaling.
+                        The bar chart on the left starts at 0 which makes the changes look relatively small.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <h4 class="mb0">
+            Quantitative continous data
+        </h4>
+
+        <p class="def mb0">
+            Things are a little more tedious when working with continous data. Instead of trying to graph all data, we
+            group it in <span class="emph">brackets</span> (often called <span class="emph">classes</span> or <span
+                class="emph">bins</span>), and then count how many numbers fall in each bracket.
+        </p>
+
+
+
+        <div class="example mt1">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Weight of 500 Siberian Huskies
+                </p>
+                <p class="example mt0">
+                    Consider a dataset consisting of weights of 500 Siberian Huskies.
+                </p>
+
+                <div class="gridTable gridTable2 gridTable4">
+                    <div class="gridTableCell gridTableHeader">Weight bracket (bin, class)</div>
+                    <div class="gridTableCell gridTableHeader">Frequency</div>
+                    <div class="gridTableCell">0 to 9 </div>
+                    <div class="gridTableCell">$$20$$</div>
+                    <div class="gridTableCell">10 to 19 </div>
+                    <div class="gridTableCell">$$81$$</div>
+                    <div class="gridTableCell">20 to 29 </div>
+                    <div class="gridTableCell">$$272$$</div>
+                    <div class="gridTableCell">30 to 39 </div>
+                    <div class="gridTableCell">$$125$$</div>
+                    <div class="gridTableCell">40 or more </div>
+                    <div class="gridTableCell">$$2$$</div>
+                </div>
+
+                <p class="example">
+                    The table above shows frequencies (counts) for each bracket. 
+                </p>
+
+                <p class="example">
+                    Sometimes, it's more useful to convert
+                    it to <span class="emph">relative frequencies</span> by dividing each frequency by the total.
+                </p>
+
+                <div class="gridTable gridTable2 gridTable4">
+                    <div class="gridTableCell gridTableHeader">Weight bracket (bin, class)</div>
+                    <div class="gridTableCell gridTableHeader">Relative Frequency</div>
+                    <div class="gridTableCell">0 to 9 </div>
+                    <div class="gridTableCell">$${20 \over 500} = 0.040$$</div>
+                    <div class="gridTableCell">10 to 19 </div>
+                    <div class="gridTableCell">$${80 \over 500} = 0.162$$</div>
+                    <div class="gridTableCell">20 to 29 </div>
+                    <div class="gridTableCell">$${272 \over 500} = 0.544$$</div>
+                    <div class="gridTableCell">30 to 39 </div>
+                    <div class="gridTableCell">$${125 \over 500} = 0.250$$</div>
+                    <div class="gridTableCell">40 or more </div>
+                    <div class="gridTableCell">$${2 \over 500} = 0.004$$</div>
+                </div>
+
+                <div class="twoChartsWrap mt1">
+                    <div id="figure17e" class="figureHighcharts figureOneRow"></div>
+                    <div id="figure17f" class="figureHighcharts figureOneRow"></div>
+                </div>
+
+                <div class="figureCation mb1">
+                    <h5 class="mb0 mt1 captionMain">
+                        Figure 1.8
+                    </h5>
+                    <p class="mb0 mt0 captionSub">
+                        Frequencies and relative frequencies
+                    </p>
+                </div>
+
+
+                <div class="warning important">
+                        <i class="fas fa-star"></i>
+                        <p class="mb0 mt0">
+                                A statistical graph is a tool that helps you learn about the 
+                                <span class="emph">shape</span> or <span class="emph">distribution</span> of a sample or a population. A graph can be
+                                a more effective way of presenting data than a mass of numbers because we can see where data clusters and where there are
+                                only a few data values.
+                
+                        </p>
+                    </div>
+
+
+         
+            </div>
+
+        </div>
+
+
+        
+        <a href="/central-tendency" targe="_self" class="cta ctaNext">
+            <div class="nextWrap">
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Next</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Next topic: Measures of Central Tendency</h5>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
+
+        <a href="/visual-displays-of-data" targe="_self" class="cta ctaPrevious">
+            <div class="nextWrap">
+                <i class="fas fa-chevron-left"></i>
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Previous</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Previous topic: Types of Data</h5>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+{{ end }}

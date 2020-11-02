@@ -1,0 +1,194 @@
+{{ define "main" }}
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    $(init);
+
+    var cardData = [{
+            "Question": "The number of pairs of shoes you own",
+            "Answer": "Quantitative discrete variable"
+        },
+        {
+            "Question": "The type of car you drive",
+            "Answer": "Qualitative (categorical) variable"
+        },
+        {
+            "Question": "Weights of sumo wrestlers",
+            "Answer": "Quantitative continous variable"
+        }
+    ]
+
+    function init() {
+
+        for (var i = 0; i < cardData.length; i++) {
+            $('<div><i class="fas fa-arrows-alt"></i><p>' + cardData[i].Question + '</p></div>').data('number', i).attr('id', 'card' + i).appendTo(
+                '#cardPile').draggable({
+                stack: '#cardPile div',
+                cursor: 'move',
+                revert: true
+            });
+            $('<div>' + cardData[i].Answer + '</div>').data('number', i).appendTo('#cardSlots').droppable({
+                accept: '#cardPile div',
+                hoverClass: 'hovered',
+                drop: handleCardDrop
+            });
+        }
+
+    }
+
+    function handleCardDrop(event, ui) {
+        var slotNumber = $(this).data('number');
+        var cardNumber = ui.draggable.data('number');
+
+        // If the card was dropped to the correct slot,
+        // change the card colour, position it directly
+        // on top of the slot, and prevent it being dragged
+        // again
+
+        if (slotNumber == cardNumber) {
+            ui.draggable.addClass('correct');
+            ui.draggable.draggable('disable');
+            $(this).droppable('disable');
+            ui.draggable.position({
+                of: $(this),
+                my: 'left top',
+                at: 'left top'
+            });
+            ui.draggable.draggable('option', 'revert', false);
+            correctCards++;
+        }
+
+
+    }
+</script>
+
+<section id="Sampling">
+
+    <div class="container">
+
+        <h2 class="mt0 mb0 bold main">
+            Types of data
+        </h2>
+
+        <p class="def mb0">
+            Data may come from a population or from a sample. Lowercase letters like x or y generally are used to
+            represent data
+            values. Most data can be put into the following categories:
+        </p>
+
+        <ul>
+            <li>Qualitative</li>
+            <li>Quantitative</li>
+        </ul>
+
+        <h4 class="mt0">
+            Qualitative (categorical) data
+        </h4>
+
+        <p class="def">
+            Qualitative data are the result of categorizing or describing attributes of a population. Qualitative data
+            are generally described by words or letters. For instance, hair color might be black, dark
+            brown, light brown, blonde, gray, or red. Blood type might be AB+, O-, or B+.
+        </p>
+
+        <h4 class="mt0">
+            Quantitative data
+        </h4>
+
+        <p class="def mb0">
+            Quantitative data are always numbers. Quantitative data are the result of counting or measuring attributes
+            of a population.
+            Amount of money, pulse rate, weight, number of people living in your town, and number of students who take
+            statistics are
+            examples of quantitative data. Quantitative data may be either <span class="emph">discrete</span> or
+            <span class="emph">continuous</span>.
+        </p>
+
+        <h5 class="mb0 mt1 subsection">
+            Discrete data
+        </h5>
+        <p class="mb0 subsection">
+            All data that are the result of counting are called quantitative discrete data. These data take on only
+            certain numerical
+            values. If you count the number of phone calls you receive for each day of the week, you might get values
+            such as zero, one,
+            two, or three.
+        </p>
+
+        <h5 class="mb0 mt1 subsection">
+            Continuous data
+        </h5>
+        <p class="mb0 subsection">
+            Data that are not only made up of counting numbers, but that may include fractions, decimals, or irrational
+            numbers, are
+            called quantitative continuous data. Continuous data are often the results of measurements like lengths,
+            weights, or times.
+            A list of the lengths in minutes for all the phone calls that you make in a week, with numbers like 2.4,
+            7.5, or 11.0, would
+            be quantitative continuous data.
+        </p>
+
+
+        <img src="{{ "media/Figure 1.6 Types of data.PNG" | relURL }}" alt="Population and Sample"
+            class="figure figureFullWidth">
+
+        <h4 class="mt0">
+            Online practice
+        </h4>
+
+        <div class="example mt0 mb0 mtb1">
+            <div class="bigEWrap">
+                <div class="bigE practiceCircle">
+                    <p>P</p>
+                </div>
+                <p class="smallE mt0 mb0">Practice</p>
+            </div>
+            <div class="exampleInner practice">
+                <p class="example mt0 mb0">
+                    Determine the correct data type (quantitative or qualitative). Indicate whether quantitative
+                    data are continuous or discrete
+                </p>
+                <p class="example mb0">
+                    This is a drag-and-drop exercise. Match the examples of data listed in the left column with the corresponding types of data listed in the right column.  
+                </p>
+            </div>
+        </div>
+
+        <div class="twoCol">
+            <div id="cardPile">
+            </div>
+            <div id="cardSlots">
+            </div>
+        </div>
+
+
+        <a href="/visual-displays-of-data" targe="_self" class="cta ctaNext">
+            <div class="nextWrap">
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Next</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Next topic: Visual displays of data</h5>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
+
+        <a href="/sampling-methods" targe="_self" class="cta ctaPrevious">
+            <div class="nextWrap">
+                <i class="fas fa-chevron-left"></i>
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Previous</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Previous topic: Sampling methods</h5>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+{{ end }}

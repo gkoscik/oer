@@ -1,0 +1,367 @@
+{{ define "main" }}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // function SamplingMethodsPractice() {
+        // }
+        var CentralPractice = [{
+                "Question": "The following data show the number of months patients typically wait on a transplant list before getting surgery. The data are ordered from smallest to largest. 3; 4; 5; 7; 7; 7; 7; 8; 8; 9; 9; 10; 10;  <br/> Calculate the mean and median.", 
+                "Answer": "Mean = 94 / 13 = 7.23 <br/> Median = 7th number = 7"
+            },
+            {
+                "Question": "The following data show the number of months patients typically wait on a transplant list before getting surgery. The data are ordered from smallest to largest. 3; 4; 5; 7; 7; 7; 7; 8; 8; 9; 9; 10; 10; 10 <br/> Calculate the mean and median.", 
+                "Answer": "Mean = 104 / 14 = 7.43 <br/> Median = (7th number + 8th number)/2 <br/> Median = (7 + 8)/2 = 7.5"
+            },
+            {
+                "Question": "Statistics exam scores for 20 students are as follows: 50; 53; 59; 59; 63; 63; 72; 72; 72; 72; 72; 76; 78; 81; 83; 84; 84; 84; 90; 93. <br/> Calculate the mode.",
+                "Answer": "The most frequent score is 72, which occurs five times. Mode = 72."
+            },
+            {
+                "Question": "Listed are 19 ages for Academy Award winning best actors in order from smallest to largest. 18; 21; 22; 25; 26; 27; 29; 30; 31; 33; 36; 37; 41; 42; 47; 52; 55; 57; 58; <br/> Calculate the median",
+                "Answer": "Median = 9th number = 31"
+            }
+        ]
+        // var SamplingMethodsIndex = [0, 1, 2, 3, 4, 5];
+        // var i;
+        // var SamplingMethodsPracticeSubset = [];
+        // for (i = 0; i < SamplingMethodsIndex.length; i++) {
+        //   SamplingMethodsPracticeSubset.push(SamplingMethodsPractice[i]);
+        // }
+        var slidesCentral = CentralPractice;
+        var contentCentral = '';
+        slidesCentral.forEach(function (slide) {
+            contentCentral +=
+                '<div class="flipCard"><div class="flipCardInner"><div class="flipCardFront"><i class="fas fa-copy"></i><p>' +
+                slide.Question + '</p></div><div class="flipCardBack"><p>' + slide.Answer +
+                '</div></div></div>';
+        });
+        document.getElementById("CentralPractice").innerHTML = contentCentral;
+    }, false);
+</script>
+
+<section id="Sampling">
+
+    <div class="container">
+
+        <h2 class="mt0 mb0 bold main">
+            Measures of Central Tendency
+        </h2>
+
+        <p class="def mb0">
+            The "center" of a data set is also a way of describing location. The two most widely used measures of the
+            "center" of the
+            data are the <span class="emph">mean (average)</span> and the <span class="emph">median</span>.
+        </p>
+
+        <p class="def mb0">
+            The median is generally a better measure of the center when there are extreme values or outliers because it
+            is
+            not affected by the precise numerical values of the outliers. The mean is the most common measure of the
+            center.
+        </p>
+
+        <p class="def">
+            Another measure of the center is the <span class="emph">mode</span>. The mode is the most frequent value.
+            There can be more than one mode in a
+            data set as long as those values have the same frequency and that frequency is the highest. A data set with
+            two modes is
+            called bimodal.
+        </p>
+
+        <p class="def"></p>
+
+        <div class="warning important">
+            <i class="fas fa-star"></i>
+            <p class="mb0 mt0">
+                The words " mean" and " average" are often used interchangeably. The substitution of one word for the
+                other is
+                common practice. The technical term is "arithmetic mean," and "average" is technically a center
+                location. However, in
+                practice among non-statisticians, "average" is commonly accepted for "arithmetic mean."
+
+            </p>
+        </div>
+
+        <h4 class="mb0 mt1">
+            Notation
+        </h4>
+        <p class="def mb0">
+            When you take more advanced Statistics courses, you will see many pairs of symbols used to differentiate between
+            population parameters and sample stiatistics. One such pair is  \(\bar{x}\) and \(\mu\).
+        </p>
+
+
+        <ul class="mb2">
+            <li>We use \(\bar{x}\) (pronounced “x bar”) to represent the sample mean
+            </li>
+            <li>
+    We use the Greek letter \(\mu\) (pronounced "mew") to represent the population mean.
+            </li>
+        </ul>
+
+        <div class="example mt1 mb2">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    AIDS patients
+                </p>
+                <p class="example mt0">
+                    AIDS data indicating the number of months a patient with AIDS lives after taking a new antibody drug
+                    are as
+                    follows (smallest to largest):
+                    3, 4, 8, 8, 10, 11, 12, 13, 14, 15, 15, 16, 16, 17, 21, 22, 23.
+                    Calculate the mean and the median.
+                </p>
+
+
+                <p class="def mb1">
+                    sample mean: <br /> $$\bar{x} = \frac{3+4+8 \cdot 2 + 10 + 11 + 12+ 13 + 15 \cdot 2 + 16 \cdot 2 + 1
+                    +21 + 22 + 23 }{17} = \frac{228}{17} = 13.41$$
+                    median: <br />
+                    $$M = 9^{th} number = 14$$
+                </p>
+
+                <p class="def mb0">
+                    There are 17 numbers in this dataset, so the median is calculated as the "middle" number: 14.<br />
+                    3, 4, 8, 8, 10, 11, 12, 13, <span class="red">14</span>, 15, 15, 16, 16, 17, 21, 22, 23
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="example mt2">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Real estate exam tests
+                </p>
+                <p class="example mt0">
+                    Five real estate exam scores are 430, 430, 480, 488, 495, 495. Find the median and the mode.
+                </p>
+
+
+                <p class="def mb0">
+                    median:
+                    $$M = \frac{3^{rd} number + 4^{th} number}{2} = \frac{480 + 488}{2} = 484$$
+
+                </p>
+
+                <p class="def mb0">
+
+                    The data set is bimodal because the scores 430 and 495
+                    each occur twice.
+                </p>
+                <p class="def mb0">
+                    There are 6 numbers in this dataset, so the median is calculated as the average of the two middle two
+                    numbers" 480 and 488<br />
+                    430, 430, <span class="red">480, 488</span>, 495, 495
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="warning important mt1 mb2">
+            <i class="fas fa-star"></i>
+            <p class="mb0 mt0">
+                    When calculating the median, data must be sorted from smallest to largest values.
+            </p>
+        </div>
+
+        <h4 class="mb0 mt2">
+            Averages can be misleading  &#128552
+        </h4>
+        <p class="def mb0">
+            We often say that the median is <span class="emph">resistant to outliers</span>. It means that the median is not influences by <span class="emph">outliers</span> as much as the mean.
+        </p>
+        <p class="def mb0">
+            Outliers are observations that do not fit the rest of the data. They are much lower or much higher than the rest of the data. 
+        </p>
+        <p class="def mb0">
+        Let's illustrate it with the following example.
+    </p>
+
+
+    <div class="example mt1">
+        <div class="bigEWrap">
+            <div class="bigE">
+                <p>E</p>
+            </div>
+            <p class="smallE mt0 mb0">Example</p>
+        </div>
+        <div class="exampleInner">
+            <p class="exampleMain mt0 mb0">
+                Comparison of Mean vs Median
+            </p>
+            <p class="example mt0">
+                The following table salaries of 5 entry-level and positions at a locat IT startup.
+            </p>
+
+            <div class="gridTable gridTable2 gridTable4 gridTable6 mb0">
+                <div class="gridTableCell gridTableHeader">Name</div>
+                <div class="gridTableCell gridTableHeader">Position</div>
+                <div class="gridTableCell gridTableHeader">Salary</div>                
+                <div class="gridTableCell">Julio </div>
+                <div class="gridTableCell">Tech Support</div>
+                <div class="gridTableCell">$56,000 </div>
+                <div class="gridTableCell">Yu</div>
+                <div class="gridTableCell">HR</div>
+                <div class="gridTableCell">$61,000</div>
+                <div class="gridTableCell">Maria</div>
+                <div class="gridTableCell">Marketing</div>
+                <div class="gridTableCell">$75,000</div>
+                <div class="gridTableCell">Mike</div>
+                <div class="gridTableCell">Web Development</div>
+                <div class="gridTableCell">$84,000</div>
+            </div>
+
+            <p class="example">
+                The mean and the median seem to accurately desribe this data.
+            </p>
+
+            <p>   $$\bar{x} = \frac{$56,000 + $61,000 + $75,000 + $84,000 }{4} = \frac{$276 000}{4} = $69,000$$
+               <br />
+               $$M = \frac{2^{nd} number + 3^{rd} number}{2} = \frac{$61,000 + $75,000}{2} = $68,000$$
+            </p>
+            <p class="example">
+                Now, let's add one more salary this list and observe its effect on the mean and the median.
+            </p>
+
+            <div class="gridTable gridTable2 gridTable4 gridTable7 mb0">
+                <div class="gridTableCell gridTableHeader">Name</div>
+                <div class="gridTableCell gridTableHeader">Position</div>
+                <div class="gridTableCell gridTableHeader">Salary</div>                
+                <div class="gridTableCell">Julio </div>
+                <div class="gridTableCell">Tech Support</div>
+                <div class="gridTableCell">$56,000 </div>
+                <div class="gridTableCell">Yu</div>
+                <div class="gridTableCell">HR</div>
+                <div class="gridTableCell">$61,000</div>
+                <div class="gridTableCell">Maria</div>
+                <div class="gridTableCell">Marketing</div>
+                <div class="gridTableCell">$75,000</div>
+                <div class="gridTableCell">Mike</div>
+                <div class="gridTableCell">Web Development</div>
+                <div class="gridTableCell">$84,000</div>
+                <div class="gridTableCell">Sophia</div>
+                <div class="gridTableCell">Chief Financial Officer (CFO)</div>
+                <div class="gridTableCell">$357,000</div>
+            </div>
+
+            <p class="example">
+                As you see, the median still describes the data somewhat accurately, but the mean is skewed towards the outlier.
+            </p>
+
+            <p>   $$\bar{x} = \frac{$56,000 + $61,000 + $75,000 + $84,000 + $357,000 }{5} = \frac{$633,000}{5} = $126,600$$
+               <br />
+               $$M = 3^{rd} number = $75,000$$
+            </p>
+   
+        </div>
+
+    </div>
+
+    <div class="example mt0 mb0 mtb1">
+        <div class="bigEWrap">
+            <div class="bigE technologyCircle">
+                <p>T</p>
+            </div>
+            <p class="smallE mt0 mb0">Technology</p>
+        </div>
+        <div class="exampleInner">
+            <p class="exampleMain mb0 mt0 technology">
+                Excel example
+            </p>
+            <p class="example mt0 mb0">
+
+                    Statistical software will easily calculate the mean, the median, and the mode. Some graphing calculators can also
+                    make these calculations. In the real world, people make these calculations using software.
+            </p>
+            <p class="example">    
+                    In this course, I emhasize using Excel.                    
+            </p>
+            <ul class="mb2">
+                    <li class="example mb1"><span class="excel">=AVERAGE()</span> function can be used to calculate the mean (average)</li>
+                    <li class="example mb1"><span class="excel">=MEDIAN()</span> function can be used to calculate the mean (average)</li>
+                </ul>
+
+            <a href="{{ "media/Measures of central tendency.xlsx" | relURL }}" target="_blank" class="download">
+                <div class="downloadWrap">
+                    <i class="fas fa-download"></i>
+                    <div class="downloadInner">
+                        <h5 class="downloadMain mb0 mt0 ">Download</h5>
+                        <p class="downloadSub mb0 mt0">This file shows how to use the RANDARRAY function in Excel
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+    <div class="example mt0 mb0 mtb1">
+        <div class="bigEWrap">
+            <div class="bigE practiceCircle">
+                <p>P</p>
+            </div>
+            <p class="smallE mt0 mb0">Practice</p>
+        </div>
+        <div class="exampleInner practice">
+            <p class="example mt0 mb0">
+                Calculate the mean, mode, and median for the following data:
+            </p>
+            <p class="example mb0">
+                Hover over each card to check your answer.
+            </p>
+        </div>
+    </div>
+
+    <div id="CentralPractice" class="threeCol twoRow mb2"></div>
+
+    <h4 class="mb0 mt2">
+        Measures of central tendency for grouped data.
+    </h4>
+    <p class="def mb0">
+        Work in progress.
+    </p>
+
+
+    <a href="/dispersion" targe="_self" class="cta ctaNext">
+        <div class="nextWrap">
+            <div class="nextInner">
+                <h3 class="nextMain mb0 mt0">Next</h3>
+                <h5 class="nextSub mb0 mt0 subtitle">Next topic: Measures of Dispersion</h5>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </a>
+
+    <a href="/types-of-data" targe="_self" class="cta ctaPrevious">
+        <div class="nextWrap">
+            <i class="fas fa-chevron-left"></i>
+            <div class="nextInner">
+                <h3 class="nextMain mb0 mt0">Previous</h3>
+                <h5 class="nextSub mb0 mt0 subtitle">Previous topic: Visual Displays of data</h5>
+            </div>
+        </div>
+    </a>
+
+    </div>
+
+</section>
+
+{{ end }}
