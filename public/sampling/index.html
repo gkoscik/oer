@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OER Stat website</title>
+    
+
+    
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript">
+        (function () {
+            var css = document.createElement('link');
+            css.href = 'https://use.fontawesome.com/releases/v5.13.0/css/all.css';
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+</head>
+
+<body>
+<nav>
+    <div class="navInner">
+        <div class="navLinks">
+            <a href="/" target="_self">
+                <p class="navLink">
+                    Home
+                </p>
+            </a>
+            <p class="navLink navLinkMain">Sampling</p>
+            <a href="/sampling" target="_self">
+                <p class="navLink navLinkSub">
+                    Introduction
+                </p>
+            </a>
+            <a href="/sampling-methods" target="_self">
+                <p class="navLink navLinkSub">
+                    Methods
+                </p>
+            </a>
+            <p class="navLink navLinkMain">Data</p>
+            <a href="/types-of-data" target="_self">
+                <p class="navLink navLinkSub">
+                    Types of data
+                </p>
+            </a>
+            <a href="/visual-displays-of-data" target="_self">
+                <p class="navLink navLinkSub">
+                    Visual Displays of data
+                </p>
+            </a>
+            <p class="navLink navLinkMain">Numerical summaries of data</p>
+            <a href="/central-tendency" target="_self">
+                <p class="navLink navLinkSub">
+                    Measures of central tendency
+                </p>
+            </a>
+            <a href="/dispersion" target="_self">
+                <p class="navLink navLinkSub">
+                    Measures of dispersion
+                </p>
+            </a>
+
+        </div>
+        <div class="navSocial">
+            <p class="navLink navLinkMain">Licenses </p>
+            <a class="navLink" href="https://openstax.org/details/introductory-statistics" target="_blank">
+                <p class="navLink">written content: OpenStax </p>
+            </a>
+            <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <p>(CC BY 4.0)</p>
+            </a>
+            <a class="navLink" href="https://www.highcharts.com/?credits" target="_blank">
+                <p class="navLink">interactive graphs: HigherCharts </p>
+            </a>
+            <a target="_blank" href="https://creativecommons.org/licenses/by-nc/3.0/us/">
+                <p>(CC BY-NC 3.0 US)</p>
+            </a>
+            <a class="navLink" href="https://www.mathjax.org/" target="_blank">
+                <p class="navLink">MathJax</p>
+            </a>
+      
+            
+
+
+        </div>
+    </div>
+</nav>
+
+<div class="wip">
+
+<div class="wipInner">
+
+
+    <h3>
+        Plase view this website on a standard latop or a large monitor.
+    </h3>
+
+    <hr>
+
+    <p>
+
+        The mobile version will be available soon....
+    </p>
+
+    <i class="fas fa-mobile-alt"></i>
+
+</div>
+
+
+</div>
+
+
+  
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        
+        var SamplingPractice = [{
+                "Question": "All students who graduated from the college last year",
+                "Answer": "Population"
+            },
+            {
+                "Question": "The average cumulative GPA of students in the survey who graduated from the college last year",
+                "Answer": "Statistic"
+            },
+            {
+                "Question": "The average cumulative GPA of students who graduated from the college last year",
+                "Answer": "Parameter"
+            },
+            {
+                "Question": "A group of students who graduated from the college last year, randomly selected",
+                "Answer": "Sample"
+            },
+            {
+                "Question": "3.65, 2.80, 1.50, 3.90",
+                "Answer": "Data"
+            },
+            {
+                "Question": "All students who attended the college last year",
+                "Answer": "None of the above. This study refers to students who graduated last year "
+            }
+        ]
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        var slides = SamplingPractice;
+        var content = '';
+        slides.forEach(function (slide) {
+            content +=
+                '<div class="flipCard"><div class="flipCardInner"><div class="flipCardFront"><i class="fas fa-copy"></i><p>' +
+                slide.Question + '</p></div><div class="flipCardBack"><p>' + slide.Answer +
+                '</div></div></div>';
+        });
+        document.getElementById("SamplingPractice").innerHTML = content;
+    }, false);
+</script>
+
+<section id="Sampling">
+
+    <div class="container">
+
+        <h2 class="mt0 mb0 bold main">
+            Sampling: Introduction
+        </h2>
+
+        <p class="def">
+            In statistics, we generally want to study a <span class="emph"> population</span>. You can think of a
+            population as a collection of persons, things, or
+            objects under study. To study the population, we select a <span class="emph">sample</span>. The idea of
+            sampling is to select a portion (or subset)
+            of the larger population and study that portion (the sample) to gain information about the population. <span
+                class="emph">Data</span> are the result of
+            sampling from a population.
+
+        </p>
+
+        <img src="/media/Figure%201.1%20and%201.2%20-%20Visual%20representation%20of%20a%20population%20and%20a%20sample.PNG"
+            alt="Population and Sample" class="figure">
+
+        <div class="example mt0 mb0 mtb1">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mb0 mt0">
+                    Example 1 - Election polls
+                </p>
+                <p class="example mt0 mb0">
+                    In presidential elections,
+                    opinion poll samples of 1,000 people are taken. The opinion poll is supposed to represent the
+                    views of the people
+                    in the entire country.
+                </p>
+            </div>
+        </div>
+        <p class="def">
+            From the sample data, we can calculate a <span class="emph">statistic</span>. A statistic is a number that
+            represents a property of the sample. The statistic is an estimate
+            of a <span class="emph">population parameter</span>. A parameter is a numerical characteristic of the whole
+            population that can be
+            estimated by a statistic.
+        </p>
+
+        <p class="def">
+            One of the main concerns in the field of statistics is how accurately a statistic estimates a parameter. The
+            accuracy really
+            depends on how well the sample represents the population. The sample must contain the characteristics of the
+            population
+            in order to be a representative sample. We are interested in both the sample statistic and the population
+            parameter in
+            inferential statistics.
+        </p>
+
+        <div class="example">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Example 2 - Parameters vs statistics
+                </p>
+                <p class="example mt0 mb0">
+                    In the example above, the percentage of 1,000 people selected for the survey who support a
+                    particular
+                    candidate would be a <span class="emph">statistic</span>. The (unknown) percentage of voters in the
+                    whole country who support that
+                    particular candidate would be a <span class="emph">parameter</span>.
+                </p>
+            </div>
+        </div>
+
+        <h4>
+            Online practice
+        </h4>
+
+        <div class="example mt0 mb0 mtb1">
+            <div class="bigEWrap">
+                <div class="bigE practiceCircle">
+                    <p>P</p>
+                </div>
+                <p class="smallE mt0 mb0">Practice</p>
+            </div>
+            <div class="exampleInner practice">
+                <p class="example mt0 mb0">
+                    A survey was conducted at a local college to analyze the average cumulative GPA’s of students who
+                    graduated last
+                    year. Plese identify the Population, Statistic, Parameter, Sample, and Data.
+                </p>
+                <p class="example mb0">
+                    Hover over each card to check your answer
+                </p>
+            </div>
+        </div>
+
+        <div id="SamplingPractice" class="threeCol"></div>
+
+        <a href="/sampling-methods" targe="_self" class="cta ctaNext">
+            <div class="nextWrap">
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Next</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Next topic: Sampling methods</h5>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
+
+        <a href="/" targe="_self" class="cta ctaPrevious">
+            <div class="nextWrap">
+                <i class="fas fa-chevron-left"></i>
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Previous</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Homepage</h5>
+                </div>
+
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+<script src="js/main.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+</body>
+</html>

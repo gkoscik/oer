@@ -1,0 +1,35 @@
+:root {
+    --bodyBgColor: #EFE9E7;
+    --whiteBgColor: white;
+    --whiteText: white;
+    --mainFontColor: #111111;
+    --mainFontColorLight: rgb(88, 88, 88);
+    --navBgColor: rgba(0, 65, 161, 0.925);
+    --navTextColor: rgb(248, 248, 248);
+   
+    --color1: #0041A1;
+    --color1Light: rgb(195, 219, 255);
+    --color2: #F1A208;
+    --color2Light: rgb(255, 188, 53);
+    --color2Lighter: rgb(255, 238, 203);
+    --color2Dark: rgb(236, 158, 0);
+    --color3: #06A77D;
+    --color3Light: rgb(115, 247, 212);
+    --color3Hover: rgb(6, 150, 111);
+    --color3Dark: rgb(6, 150, 111);
+    --color4: #EE4266;
+    --color4Light: rgb(255, 169, 188);
+
+    --warningColor: rgb(228, 1, 1);
+
+    --paddingTopBottom: 3rem;
+    --ttime: 300ms;
+    --flipWidth: 250px;
+    --flipHeight: 250px;
+    --flipTime: 1200ms;
+    --borderRadius: 20px;
+    --textBgTransparent: rgba(197, 197, 197, 0.774);
+}
+
+
+/* https://coolors.co/0041a1-06a77d-f1a208-ee4266-efe9e7 */

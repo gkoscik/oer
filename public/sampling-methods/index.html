@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OER Stat website</title>
+    
+
+    
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript">
+        (function () {
+            var css = document.createElement('link');
+            css.href = 'https://use.fontawesome.com/releases/v5.13.0/css/all.css';
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+</head>
+
+<body>
+<nav>
+    <div class="navInner">
+        <div class="navLinks">
+            <a href="/" target="_self">
+                <p class="navLink">
+                    Home
+                </p>
+            </a>
+            <p class="navLink navLinkMain">Sampling</p>
+            <a href="/sampling" target="_self">
+                <p class="navLink navLinkSub">
+                    Introduction
+                </p>
+            </a>
+            <a href="/sampling-methods" target="_self">
+                <p class="navLink navLinkSub">
+                    Methods
+                </p>
+            </a>
+            <p class="navLink navLinkMain">Data</p>
+            <a href="/types-of-data" target="_self">
+                <p class="navLink navLinkSub">
+                    Types of data
+                </p>
+            </a>
+            <a href="/visual-displays-of-data" target="_self">
+                <p class="navLink navLinkSub">
+                    Visual Displays of data
+                </p>
+            </a>
+            <p class="navLink navLinkMain">Numerical summaries of data</p>
+            <a href="/central-tendency" target="_self">
+                <p class="navLink navLinkSub">
+                    Measures of central tendency
+                </p>
+            </a>
+            <a href="/dispersion" target="_self">
+                <p class="navLink navLinkSub">
+                    Measures of dispersion
+                </p>
+            </a>
+
+        </div>
+        <div class="navSocial">
+            <p class="navLink navLinkMain">Licenses </p>
+            <a class="navLink" href="https://openstax.org/details/introductory-statistics" target="_blank">
+                <p class="navLink">written content: OpenStax </p>
+            </a>
+            <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <p>(CC BY 4.0)</p>
+            </a>
+            <a class="navLink" href="https://www.highcharts.com/?credits" target="_blank">
+                <p class="navLink">interactive graphs: HigherCharts </p>
+            </a>
+            <a target="_blank" href="https://creativecommons.org/licenses/by-nc/3.0/us/">
+                <p>(CC BY-NC 3.0 US)</p>
+            </a>
+            <a class="navLink" href="https://www.mathjax.org/" target="_blank">
+                <p class="navLink">MathJax</p>
+            </a>
+      
+            
+
+
+        </div>
+    </div>
+</nav>
+
+<div class="wip">
+
+<div class="wipInner">
+
+
+    <h3>
+        Plase view this website on a standard latop or a large monitor.
+    </h3>
+
+    <hr>
+
+    <p>
+
+        The mobile version will be available soon....
+    </p>
+
+    <i class="fas fa-mobile-alt"></i>
+
+</div>
+
+
+</div>
+
+
+  
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        
+        var SamplingMethodsPractice = [{
+                "Question": "A soccer coach selects six players from a group of boys aged 8 to 10 and seven players from a group of boys aged 11 to 12 to form a soccer team.",
+                "Answer": "Stratified"
+            },
+            {
+                "Question": "A pollster interviews all human resource personnel in five different high tech companies.",
+                "Answer": "Cluster"
+            },
+            {
+                "Question": "A high school educational researcher interviews 50 high school female teachers and 50 high school male teachers.",
+                "Answer": "Stratified"
+            },
+            {
+                "Question": "A medical researcher interviews every third cancer patient from a list of cancer patients at a local hospital.",
+                "Answer": "Systematic"
+            },
+            {
+                "Question": "A high school counselor uses a computer to generate 50 random numbers and then picks students whose names correspond to the numbers.",
+                "Answer": "Simple Random Sample (SRS)"
+            },
+            {
+                "Question": "A student interviews classmates in his algebra class to determine how many pairs of jeans a student owns, on the average.",
+                "Answer": "Convenience"
+            }
+        ]
+        
+        
+        
+        
+        
+        
+        var slidesMethods = SamplingMethodsPractice;
+        var contentMethods = '';
+        slidesMethods.forEach(function (slide) {
+            contentMethods +=
+                '<div class="flipCard"><div class="flipCardInner"><div class="flipCardFront"><i class="fas fa-copy"></i><p>' +
+                slide.Question + '</p></div><div class="flipCardBack"><p>' + slide.Answer +
+                '</div></div></div>';
+        });
+        document.getElementById("SamplingMethodsPractice").innerHTML = contentMethods;
+    }, false);
+</script>
+
+<section id="Sampling">
+
+    <div class="container">
+
+        <h2 class="mt0 mb0 bold main">
+            Sampling Methods
+        </h2>
+
+        <p class="def">
+            Gathering information about an entire population often costs too much or is virtually impossible. Instead,
+            we use a sample of the population. A sample should have the same characteristics as the population it is
+            representing.
+        </p>
+
+        <p class="def">
+            This section will describe a few of the most
+            common methods: Simple Random Sampling (SRS), Stratified Sampling, Cluster Sampling, Systematic Sampling,
+            and Conveniece Sampling.
+        </p>
+
+        <h4 class="mt0">
+            Simple random sample
+        </h4>
+        <p class="def">
+            Any group of n individuals is equally likely to be chosen as
+            any other group of n individuals if the simple random sampling technique is used. In other words, each
+            sample of the same
+            size has an equal chance of being selected
+        </p>
+
+        <img src="/media/Figure%201.3%20Simple%20Random%20Sampling.PNG" alt="Population and Sample"
+            class="figure">
+
+        <div class="example mt0 mb0 mtb1">
+            <div class="bigEWrap">
+                <div class="bigE technologyCircle">
+                    <p>T</p>
+                </div>
+                <p class="smallE mt0 mb0">Technology</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mb0 mt0 technology">
+                    Excel example
+                </p>
+                <p class="example mt0 mb0">
+                    Simple random sampling is often done using technology. One way to do it is by using the &nbsp; <span
+                        class="excel">=RANDARRAY()</span> function in Excel.
+                </p>
+                <p class="example">
+                    It takes 5 arguments
+                    &nbsp; <span class="excel">=RANDARRAY([rows], [columns], [min], [max], [whole_number])</span>.
+                </p>
+
+                <ul>
+                    <li class="example">rows: The number of rows to be returned</li>
+                    <li class="example">columns: The number of columns to be returned</li>
+                    <li class="example">min: The minimum number you would like returned</li>
+                    <li class="example">max: The maximum number you would like returned</li>
+                    <li class="example">whole_number: Return a whole number (1) number or a decimal value (0)</li>
+                </ul>
+
+                <p class="example mb0">
+                    For example,
+                </p>
+                <ul>
+                    <li class="example mb1">to generate 1 column of 7 whole numbers between 1 and 22, enter &nbsp;<span
+                            class="excel">=RANDARRAY(7, 1, 1, 22, 1)</span></li>
+                    <li class="example mb1">to generate 1 column of 10 whole numbers between 50 and 500, enter
+                        &nbsp;<span class="excel">=RANDARRAY(10, 1, 50, 500, 1)</span></li>
+                    <li class="example mb1">to generate 1 column of 20 decimals between 100 and 110, enter &nbsp;<span
+                            class="excel">=RANDARRAY(20, 1, 100, 110, 0)</span></li>
+                    <li class="example mb1">to generate 2 columns of 10 decimals between 100 and 110, enter &nbsp;<span
+                            class="excel">=RANDARRAY(10, 2, 100, 110, 0)</span></li>
+                </ul>
+
+                <a href="/media/SRS%20Example.xlsx" target="_blank" class="download">
+                    <div class="downloadWrap">
+                        <i class="fas fa-download"></i>
+                        <div class="downloadInner">
+                            <h5 class="downloadMain mb0 mt0 ">Download</h5>
+                            <p class="downloadSub mb0 mt0">This file shows how to use the RANDARRAY function in Excel
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <h4 class="mt0">
+            Stratified sample
+        </h4>
+
+        <p class="def">
+            To choose a stratified sample, divide the population into groups called strata and then take a <span
+                class="emph">proportionate</span> number
+            from each stratum. For example, you could stratify (group) your college population by department and then
+            choose a
+            proportionate simple random sample from each stratum (each department) to get a stratified random sample.
+        </p>
+
+        <img src="/media/Figure%201.4%20Stratified%20Random%20Sampling.PNG" alt="Stratified sampling"
+            class="figure">
+
+
+        <div class="example">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Example 3 - Proportionate sampling
+                </p>
+                <p class="example mt0">
+                    A local college district wants to determine the average tuition that
+                    undergraduate students pay per semester. A sample is taken by organizing the students’ names by
+                    classification (freshman, sophomore, junior, or senior), and then proportinally selecting students
+                    from each strata (classification) for the total of 200.
+                </p>
+
+                <div class="gridTable gridTable1">
+                    <div class="gridTableCell gridTableHeader">Classification</div>
+                    <div class="gridTableCell gridTableHeader">Number of students in the population</div>
+                    <div class="gridTableCell gridTableHeader">Ratio</div>
+                    <div class="gridTableCell gridTableHeader">Number of students in the sample</div>
+                    <div class="gridTableCell">Freshman</div>
+                    <div class="gridTableCell">$$800$$</div>
+                    <div class="gridTableCell">$${800 \over 5,000} = 0.16$$</div>
+                    <div class="gridTableCell">$$0.16 \times 200 = 32$$</div>
+                    <div class="gridTableCell">Sophmore</div>
+                    <div class="gridTableCell">$$500$$</div>
+                    <div class="gridTableCell">$${500 \over 5,000} = 0.16$$</div>
+                    <div class="gridTableCell">$$0.16 \times 200 = 20$$</div>
+                    <div class="gridTableCell">Junior</div>
+                    <div class="gridTableCell">$$800$$</div>
+                    <div class="gridTableCell">$${800 \over 5,000} = 0.16$$</div>
+                    <div class="gridTableCell">$$0.16 \times 200 = 32$$</div>
+                    <div class="gridTableCell">Senior</div>
+                    <div class="gridTableCell">$$2,900$$</div>
+                    <div class="gridTableCell">$${2,900\over 5,000} = 0.58$$</div>
+                    <div class="gridTableCell">$$0.58 \times 200 = 116$$</div>
+                    <div class="gridTableCell">Total</div>
+                    <div class="gridTableCell">$$5,000$$</div>
+                    <div class="gridTableCell">$$1$$</div>
+                    <div class="gridTableCell">$$200$$</div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <h4>
+            Cluster sample
+        </h4>
+
+        <p class="def">
+            To choose a cluster sample, divide the population into clusters (groups) and then randomly select some of
+            the clusters.
+            All the members from these clusters are in the cluster sample.
+        </p>
+
+        <img src="/media/Figure%201.5%20Stratified%20Cluster%20Sampling.PNG" alt="Cluster samplling"
+            class="figure">
+
+
+        <div class="example">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Cluster Sample
+                </p>
+                <p class="example mt0 mb0">
+                    For example, if you randomly sample four departments
+                    from your college population, the four departments make up the cluster sample. Divide your college
+                    faculty by department.
+                    The departments are the clusters. Number each department, and then choose four different numbers
+                    using simple random
+                    sampling. All members of the four departments with those numbers are the cluster sample.
+                </p>
+
+            </div>
+        </div>
+
+        <h4>
+            Systematic Sampling
+        </h4>
+        <p class="def">
+            To choose a systematic sample, randomly select a starting point and take every nth piece of data from a
+            listing of the
+            population.
+        </p>
+
+        <div class="example">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Systematic Sample
+                </p>
+                <p class="example mt0 mb0">
+                    For example, suppose you have to do a phone survey. Your phone book contains 20,000 residence
+                    listings. You
+                    must choose 400 names for the sample. Number the population 1–20,000 and then use a simple random
+                    sample to pick a
+                    number that represents the first name in the sample. Then choose every fiftieth name thereafter
+                    until you have a total of 400
+                    names
+                </p>
+
+            </div>
+        </div>
+
+        <h4>
+            Convenience Sampling
+        </h4>
+        <p class="def">
+            A type of sampling that is non-random is convenience sampling. Convenience sampling involves using results
+            that are
+            readily available.
+        </p>
+        <div class="example">
+            <div class="bigEWrap">
+                <div class="bigE">
+                    <p>E</p>
+                </div>
+                <p class="smallE mt0 mb0">Example</p>
+            </div>
+            <div class="exampleInner">
+                <p class="exampleMain mt0 mb0">
+                    Convenience Sample
+                </p>
+                <p class="example mt0 mb0">
+                    For example, a computer software store conducts a marketing study by interviewing potential
+                    customers
+                    who happen to be in the store browsing through the available software. The results of convenience
+                    sampling may be very
+                    good in some cases and highly biased (favor certain outcomes) in others.
+                </p>
+
+            </div>
+        </div>
+
+        <h4>
+            Online practice
+        </h4>
+
+        <div class="example mt0 mb0 mtb1">
+            <div class="bigEWrap">
+                <div class="bigE practiceCircle">
+                    <p>P</p>
+                </div>
+                <p class="smallE mt0 mb0">Practice</p>
+            </div>
+            <div class="exampleInner practice">
+                <p class="example mt0 mb0">
+                    Determine the type of sampling used: simple random, stratified, systematic, cluster, or
+                    convenience.
+                </p>
+                <p class="example mb0">
+                    Hover over each card to check your answer.
+                </p>
+            </div>
+        </div>
+
+        <div id="SamplingMethodsPractice" class="threeCol"></div>
+
+
+        <a href="/types-of-data" targe="_self" class="cta ctaNext">
+            <div class="nextWrap">
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Next</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Next topic: Types of data</h5>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
+
+        <a href="/sampling" targe="_self" class="cta ctaPrevious">
+            <div class="nextWrap">
+                <i class="fas fa-chevron-left"></i>
+                <div class="nextInner">
+                    <h3 class="nextMain mb0 mt0">Previous</h3>
+                    <h5 class="nextSub mb0 mt0 subtitle">Previous topic: Sampling: Terminology</h5>
+                </div>
+
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+<script src="js/main.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+</body>
+</html>

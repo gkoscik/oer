@@ -1,0 +1,5 @@
+section {
+    height: 100%;
+    margin-left: calc(250px + 2rem);
+    padding: var(--paddingTopBottom) 7rem;
+}
